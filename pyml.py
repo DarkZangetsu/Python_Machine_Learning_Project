@@ -8,7 +8,8 @@ from sklearn.preprocessing import LabelEncoder
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score, classification_report
 
-# Configuration de la page Streamlit
+# Configuration de la page Streamlit 
+
 st.set_page_config(page_title="Analyse de l'enquête sur l'emploi en Inde", layout="wide")
 
 # Titre de l'application
@@ -115,7 +116,7 @@ if uploaded_file is not None:
     employment_background = st.selectbox("Background d'emploi", options=le_dict['Employment Background'].classes_)
     public_dealing = st.selectbox("Public Dealing", options=le_dict['Public Dealing'].classes_)
     degree = st.selectbox("Diplôme", options=le_dict['Degree'].classes_)
-    ideal_workdays = st.slider("Nombre idéal de jours de travail", min_value=4, max_value=7, value=5)
+    ideal_workdays = st.slider("Nombre idéal de jours de travail", min_value=4, max_value=30, value=5)
 
     # Préparation des données d'entrée pour la prédiction
     input_data = pd.DataFrame({
